@@ -1,0 +1,110 @@
+/*  
+Theme Name: Johannesburg
+Author: Marty Spellerberg
+*/
+
+
+body { font-family: "Founders Grotesk";  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 48px; margin: 0; padding: 0; }
+
+em, i { font-style: normal; font-weight: 500; }
+
+	
+a { text-decoration: none;}
+
+
+h1 { font-size: 60px; margin: 0; }
+
+h2 { font-size: 60px; margin: 0; padding-top: .25em; /*color: #ABE2C6; color: rgba(256,256,256,0.666666) */  }
+
+h3 { font-size: 48px; margin-top: 2em; }
+
+h4 { font-size: 48px; font-weight: 500; margin: 0; }
+	
+.header {padding: .85em 1em 0 1em; font-size: 60px;  font-weight: bold;}
+.js .header {  position: fixed; top: 0; left: 0; }
+.js.adminbarshowing .header { top: 32px; }
+
+ul.childrenmenu {list-style: none; margin: 1em 0 0 0; padding: 0; }
+ul.childrenmenu li {margin:0; padding: 0; }
+
+.content { padding: 0 60px 60px 60px; overflow: hidden; }
+.content a {}
+	
+.parenttitle { display: none; }
+
+
+.navigation { font-size: 60px; position: fixed; top: 0; left: 0; width: 100%; overflow:hidden; height: 100%;  font-weight: bold;
+    -webkit-transition: height .2s linear;
+    -moz-transition: height .2s linear;
+    transition: height .2s linear;
+}
+.adminbarshowing .navigation { top: 32px; }
+.navigation.hidden { height:0; }
+
+
+.navigation .padding { padding: .85em 1em 0 1em; }
+
+
+/* White */
+.white { background: #fff; color: #00A651; } 
+
+.white .header a { color: #00A651; }
+.white h1 a { border-bottom: .1em solid #00A651; }
+.white h1 span { border-bottom: .1em solid #00A651; }
+
+.white .content a { color: #ABE2C6; }
+.white .content a:hover { border-bottom: 3px solid #ABE2C6;  }
+
+.white .navigation {background: #ABE2C6;}
+.white .navigation a { color: #00A651; }
+.white .navigation h1 a { border-bottom: .1em solid #00A651; }
+
+
+/* Green */
+.green { background: #00A651; color: #fff; } 
+
+.green .header a { color: #fff; }
+.green h1 a { border-bottom: .1em solid #fff; }
+
+.green .content a { color: #ABE2C6; }
+.green .content a:hover { border-bottom: 3px solid #ABE2C6;  }
+
+.green .navigation {background: #ABE2C6;}
+.green .navigation a { color: #00A651; }
+.green .navigation h1 a { border-bottom: .1em solid #00A651; }
+
+/* Blue */
+.blue { background: #0072BC; color: #fff; } 
+
+.blue .header a { color: #fff; }
+.blue h1 a { border-bottom: .1em solid #fff; }
+
+.blue .content a { color: #b2d4eb; }
+.blue .content a:hover { border-bottom: 3px solid #b2d4eb;  }
+
+.blue .navigation {background: #b2d4eb;}
+.blue .navigation a { color: #0072BC; }
+.blue .navigation h1 a { border-bottom: .1em solid #0072BC; }
+
+
+/* Red */
+.red { background: #ED1C24; color: #fff; } 
+
+.red .header a { color: #fff; }
+.red h1 a { border-bottom: .1em solid #fff; }
+
+.red .content a { color: #fdeaf0; }
+.red .content a:hover { border-bottom: 3px solid #fdeaf0;  }
+
+.red .navigation {background: #fdeaf0;}
+.red .navigation a { color: #ED1C24; }
+.red .navigation h1 a { border-bottom: .1em solid #ED1C24; }
+
+
+/* Gallery */
+
+.slide {text-align: center; padding: .5em 2.5em; box-sizing: border-box; }
+.slide img {max-width: 100%; max-height: 100%;}
+
+.slideinner {width: 100%; height: 100%; display: block; }
+.slideinner:active, .slideinner:focus { outline: 0; outline-style:none; outline-width:0; }
