@@ -16,19 +16,14 @@ function enqueue_scripts_method() {
 	wp_enqueue_script( 'jquery');
 
 	// Slideshow
-	$johannesburgjs = get_template_directory_uri() . '/js/slideshow.js';
-	wp_register_script('johannesburgjs',$johannesburgjs);
-	wp_enqueue_script( 'johannesburgjs',array('jquery'));
-
-	// Timeout JS
-	$timeoutjs = get_template_directory_uri() . '/js/jquery.ba-dotimeout.min.js';
-	wp_register_script('timeoutjs',$timeoutjs);
-	wp_enqueue_script( 'timeoutjs',array('jquery','timeoutjs'));
+	$slideshowjs = get_template_directory_uri() . '/js/slideshow.js';
+	wp_register_script('slideshowjs',$slideshowjs);
+	wp_enqueue_script( 'slideshowjs',array('jquery'));
 
 	// Theme JS
 	$themejs = get_template_directory_uri() . '/js/johannesburg.js';
 	wp_register_script('themejs',$themejs);
-	wp_enqueue_script( 'themejs',array('jquery','johannesburgjs'));
+	wp_enqueue_script( 'themejs',array('jquery','slideshowjs'));
 	
 	// Fonts CSS
 	$fontscss = get_template_directory_uri() . '/fonts/fonts.css';
@@ -74,13 +69,11 @@ function is_page_or_subpage_of($slug) {
 
 function get_ID_by_slug($page_slug) {
 
-    $page = get_page_by_path($page_slug);
+	global $wpdb;
 
-	if ($page) {
-        return $page->ID;
-    } else {
-        return null;
-    }
+	$page_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE ( post_name = '".$page_slug."' or post_title = '".$page_slug."' ) and post_status = 'publish' and post_type='page' ");
+	return $page_id;
+
 }
 
 

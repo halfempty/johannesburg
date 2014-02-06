@@ -4,9 +4,9 @@ Author: Marty Spellerberg
 */
 
 
-body { font-family: "Founders Grotesk";  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 48px; margin: 0; padding: 0; }
+body { font-family: "FoundersGroteskWeb"; font-weight: 400; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 48px; margin: 0; padding: 0; }
 
-em, i { font-style: normal; font-weight: 500; }
+em, i, strong, b { font-style: normal; font-weight: 500; }
 
 	
 a { text-decoration: none;}
@@ -20,7 +20,7 @@ h3 { font-size: 48px; margin-top: 2em; }
 
 h4 { font-size: 48px; font-weight: 500; margin: 0; }
 	
-.header {padding: .85em 1em 0 1em; font-size: 60px;  font-weight: bold;}
+.header {padding: .85em 1em 0 1em; font-size: 60px;  font-weight: 600;}
 .js .header {  position: fixed; top: 0; left: 0; }
 .js.adminbarshowing .header { top: 32px; }
 
@@ -33,7 +33,7 @@ ul.childrenmenu li {margin:0; padding: 0; }
 .parenttitle { display: none; }
 
 
-.navigation { font-size: 60px; position: fixed; top: 0; left: 0; width: 100%; overflow:hidden; height: 100%;  font-weight: bold;
+.navigation { font-size: 60px; position: fixed; top: 0; left: 0; width: 100%; overflow:hidden; height: 100%;  font-weight: 600;
     -webkit-transition: height .2s linear;
     -moz-transition: height .2s linear;
     transition: height .2s linear;
@@ -44,6 +44,8 @@ ul.childrenmenu li {margin:0; padding: 0; }
 
 .navigation .padding { padding: .85em 1em 0 1em; }
 
+.credits { font-size: 18px; position: fixed; bottom: 0; left: 0; padding-left: 60px; }
+.credits a { font-style: normal; font-weight: 500; color: #00A651; }
 
 /* White */
 .white { background: #fff; color: #00A651; } 

@@ -32,7 +32,7 @@
 <?php 
 if ( is_front_page() || is_page_or_subpage_of('stories') ) : 
 	$class = "white";
-elseif ( is_page_or_subpage_of('books') ) : 
+elseif ( is_page_or_subpage_of('books') || is_page('bastard-eden-our-chernobyl') || is_page('interrogations') ) : 
 	$class = "red";
 elseif ( is_page('workshops') ) :
 	$class = "blue";

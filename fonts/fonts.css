@@ -1,1 +1,35 @@
-/* Icons */
+@font-face {
+	/* Regular */
+	font-family:"FoundersGroteskWeb";
+	font-weight: 400;
+	font-style: normal;
+	src:url("FoundersGroteskWeb-Regular.eot?#iefix");
+	src:url("FoundersGroteskWeb-Regular.eot?#iefix") format("eot"),
+		url("FoundersGroteskWeb-Regular.woff") format("woff"),
+		url("FoundersGroteskWeb-Regular.ttf") format("truetype"),
+		url("FoundersGroteskWeb-Regular.svg#FoundersGroteskWeb-Regular") format("svg");
+}
+
+@font-face {
+	/* Medium */
+	font-family:"FoundersGroteskWeb";
+	font-weight: 500;
+	font-style: normal;
+	src:url("FoundersGroteskWeb-Medium.eot?#iefix");
+	src:url("FoundersGroteskWeb-Medium.eot?#iefix") format("eot"),
+		url("FoundersGroteskWeb-Medium.woff") format("woff"),
+		url("FoundersGroteskWeb-Medium.ttf") format("truetype"),
+		url("FoundersGroteskWeb-Medium.svg#FoundersGroteskWeb-Medium") format("svg");
+}
+
+@font-face {
+	/* Bold */
+	font-family:"FoundersGroteskWeb";
+	font-weight: 600;
+	font-style: normal;
+	src:url("FoundersGroteskWeb-Bold.eot?#iefix");
+	src:url("FoundersGroteskWeb-Bold.eot?#iefix") format("eot"),
+		url("FoundersGroteskWeb-Bold.woff") format("woff"),
+		url("FoundersGroteskWeb-Bold.ttf") format("truetype"),
+		url("FoundersGroteskWeb-Bold.svg#FoundersGroteskWeb-Bold") format("svg");
+}
