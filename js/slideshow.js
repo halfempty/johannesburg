@@ -13,7 +13,8 @@ $(document).ready(function() {
 		} 
 
 		contentheight = contentheight - wpadminbar;		
-		$('.slide').css({
+
+		$('.imageslide').css({
 	 		'height': contentheight +'px',
 		});
 
