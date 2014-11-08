@@ -1,5 +1,4 @@
 (function($) {
-$(document).ready(function() {
 
 	function setHeights() {
 
@@ -18,17 +17,27 @@ $(document).ready(function() {
 	 		'height': contentheight +'px',
 		});
 
+		$('.headerslide').css({
+	 		'height': contentheight +'px',
+		});
+
 		var galleryheight = $('.gallery').outerHeight();
 
 	}
 
-	$(window).resize(function() {
-	  setHeights();
-	});
 
+$(document).ready(function() {
 	setHeights();
-
 });
+
+$(document).load(function() {
+	setHeights();
+});
+
+$(window).resize(function() {
+	setHeights();
+});
+
 
 $(function() {
 

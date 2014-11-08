@@ -15,6 +15,7 @@
 		?></title>
 	
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<meta name="author" content="http://martyspellerberg.com" />
 
 		<!-- Fav Icons: Browser, iOS, Windows 8 -->
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon.ico">
@@ -29,27 +30,25 @@
 
 </head>
 <?php 
-if ( is_front_page() || is_page_or_subpage_of('stories') ) : 
-	$class = "white";
-elseif ( is_page_or_subpage_of('books') || is_page('bastard-eden-our-chernobyl') || is_page('interrogations') ) : 
-	$class = "red";
-elseif ( is_page('workshops') ) :
-	$class = "blue";
-else :
+if ( is_page_or_subpage_of('info') ) : 
 	$class = "green";
+else :
+	$class = "white";
 endif;
 
 if ( is_admin_bar_showing() ) 	$class .= " adminbarshowing";
 ?>
 <body class="hidden <?php echo $class; ?>">
-<div class="header">
-	<?php if ( is_front_page() ) : ?>
-		<h1><span><?php bloginfo('name'); ?></span></h1>
-	<?php else : ?>
-		<h1 class="shownav"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-		<h2><a href="<?php get_parent_link($post->post_parent); ?>"><?php the_title(); ?></a></h2>
-	<?php endif; ?>
 
-	<?php get_template_part('parts/children-menu'); ?>
+<?php if ( is_front_page() ) : ?>
+	<h1 class="header"><span>Donald Weber</span></h1>
+<?php else : ?>
+	<h1 class="shownav header"><a href="<?php echo get_option('home'); ?>/"><span>Donald Weber</span></a></h1>
+<?php endif; ?>
 	
+	
+<?php if ( !is_front_page() ) : ?>
+<div class="pagetitle">
+	<h2><?php the_title(); ?></h2>
 </div>
+<?php endif; ?>

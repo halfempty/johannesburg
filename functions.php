@@ -1,8 +1,6 @@
 <?php
 
 function enqueue_scripts_method() {
-	
-	if(!wp_script_is('jquery')) wp_enqueue_script("jquery");
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -13,7 +11,7 @@ function enqueue_scripts_method() {
 	remove_action('wp_head', 'index_rel_link');
 	remove_action('wp_head', 'adjacent_posts_rel_link');
 
-	wp_enqueue_script( 'jquery');
+	if(!wp_script_is('jquery')) wp_enqueue_script("jquery");
 
 	// Slideshow
 	$slideshowjs = get_template_directory_uri() . '/js/slideshow.js';
@@ -40,7 +38,6 @@ function enqueue_scripts_method() {
 add_action('wp_enqueue_scripts', 'enqueue_scripts_method');
 
 
-
 function is_page_or_subpage_of($slug) {
 
 	global $post;
@@ -53,12 +50,11 @@ function is_page_or_subpage_of($slug) {
 
 		else :
 
-			$targetid = '781';
-		
-			if ( $post->post_parent == $targetid ) :
+			$targetid = get_ID_by_slug($slug);
 
-				return true;
-			endif;
+			$ancestors = get_post_ancestors($post->ID);
+			
+			if (in_array($targetid, $ancestors)) return true;
 
 		endif;
 
@@ -68,6 +64,7 @@ function is_page_or_subpage_of($slug) {
 
 
 function get_ID_by_slug($page_slug) {
+	// Not happy about calling the DB, but get_page_by_path() just wasn't cutting it.
 
 	global $wpdb;
 
@@ -75,6 +72,7 @@ function get_ID_by_slug($page_slug) {
 	return $page_id;
 
 }
+
 
 
 function get_parent_link($post_parent) {
@@ -95,5 +93,6 @@ function get_parent_link($post_parent) {
 // Includes
 
 require_once( 'functions/gallery.php' );
+require_once( 'functions/navigation.php' );
 
 ?>

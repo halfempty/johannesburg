@@ -4,22 +4,36 @@
 
 		$('body').addClass('js');
 
-		$('.shownav').on( "click", function( event ) {
+		$('h1.shownav').on( "click", function( event ) {
 			event.preventDefault();
-    		$('.navigation').removeClass('hidden');
+    		$('.navigation').toggleClass('hidden');
+    		$('body').toggleClass('hasoverlay');
 		});
 
 		$('.hidenav').on( "click", function( event ) {
 			event.preventDefault();
     		$('.navigation').addClass('hidden');
+			$('body').removeClass('hasoverlay');
+    
 		});
 
-		var headerHeight = $('.header').outerHeight();
+		var headerHeight = $('h1').outerHeight();
 
-		$('.content').css({
+		$('.pagetitle').css({
 			'margin-top' : headerHeight + 'px'
 		});
 
+		$('.navigation').find('.padding').css({
+			'padding-top' : headerHeight + 'px'
+		});
+
+		$('.navigation').find('.padding').css({
+			'padding-top' : headerHeight + 'px'
+		});
+
+		$('.homemenu').css({
+			'padding-top' : headerHeight + 'px'
+		});
 
 	});
 

@@ -14,14 +14,20 @@ $postslist = get_posts($args);
 if ( $postslist ) :
 
 ?>
-
-<ul class="childrenmenu">
-	<?php foreach ($postslist as $post) : ?>
-		<?php setup_postdata($post); ?>
-		<li><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
-	<?php endforeach; ?>
-</ul>
-
+<div class="childrenmenu">
+	<ul>
+		<?php foreach ($postslist as $post) : ?>
+			<?php setup_postdata($post); ?>
+			<li><a href="<?php echo get_permalink(); ?>"><?php 
+				if ( get_field('nav_title') ) :
+					echo the_field('nav_title'); 
+				else :
+					the_title(); 
+				endif;
+			?></a></li>
+		<?php endforeach; ?>
+	</ul>
+</div>
 <?php 
 
 endif;
