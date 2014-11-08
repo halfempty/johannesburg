@@ -30,11 +30,8 @@
 
 </head>
 <?php 
-if ( is_page_or_subpage_of('info') ) : 
-	$class = "green";
-else :
-	$class = "white";
-endif;
+
+$class = "";
 
 if ( is_admin_bar_showing() ) 	$class .= " adminbarshowing";
 ?>
