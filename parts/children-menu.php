@@ -20,7 +20,7 @@ if ( $postslist ) :
 			<?php setup_postdata($post); ?>
 			<li><a href="<?php echo get_permalink(); ?>"><?php 
 				if ( get_field('nav_title') ) :
-					echo the_field('nav_title'); 
+					the_field('nav_title'); 
 				else :
 					the_title(); 
 				endif;

@@ -37,15 +37,20 @@ if ( is_admin_bar_showing() ) 	$class .= " adminbarshowing";
 ?>
 <body class="hidden <?php echo $class; ?>">
 
-<?php if ( is_front_page() ) : ?>
-	<h1 class="header"><span>Donald Weber</span></h1>
-<?php else : ?>
-	<h1 class="shownav header"><a href="<?php echo get_option('home'); ?>/"><span>Donald Weber</span></a></h1>
-<?php endif; ?>
-	
-	
-<?php if ( !is_front_page() ) : ?>
-<div class="pagetitle">
-	<h2><?php the_title(); ?></h2>
-</div>
-<?php endif; ?>
+	<div id="content">
+
+	<?php if ( is_front_page() ) : ?>
+		<header class="topheader">
+			<h1><span>Donald Weber</span></h1>
+		</header>
+	<?php else: ?>
+		<header class="topheader shownav">
+			<h1><a href="<?php echo get_option('home'); ?>/"><span>Donald Weber</span></a></h1>
+			<h2><?php if ( get_field('project_title') ) : 
+				the_field('project_title'); 
+			else : 
+				the_title();
+			endif; ?></h2>
+		</header>
+	<?php endif; ?>
+
