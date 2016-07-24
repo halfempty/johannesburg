@@ -17,8 +17,11 @@ if ( $postslist ) :
 <div class="childrenmenu">
 	<ul>
 		<?php foreach ($postslist as $post) : ?>
-			<?php setup_postdata($post); ?>
-			<li><a href="<?php echo get_permalink(); ?>"><?php 
+			<?php 
+				setup_postdata($post); 
+				$slug = $post->post_name;
+			?>
+			<li class="<?php echo $slug; ?>"><a href="<?php echo get_permalink(); ?>"><?php 
 				if ( get_field('nav_title') ) :
 					the_field('nav_title'); 
 				else :

@@ -41,11 +41,11 @@ if ( is_admin_bar_showing() ) 	$class .= " adminbarshowing";
 
 	<?php if ( is_front_page() ) : ?>
 		<header class="topheader">
-			<h1><span>Donald Weber</span></h1>
+			<h1><span class="underline">Donald Weber</span></h1>
 		</header>
 	<?php else: ?>
 		<header class="topheader shownav">
-			<h1><a href="<?php echo get_option('home'); ?>/"><span>Donald Weber</span></a></h1>
+			<h1><a href="<?php echo get_option('home'); ?>/"><span class="underline">Donald Weber</span><span class="notch"></span></a></h1>
 			<h2><?php if ( get_field('project_title') ) : 
 				the_field('project_title'); 
 			else : 

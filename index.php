@@ -75,11 +75,8 @@
 				<?php if( get_row_layout() == 'image_slide' ):
 						$image = get_sub_field('image'); 
 						if ($image ) : 
-							if ( $image['alt'] ) :
-								$alt = $image['alt']; 
-							else :
-								$alt = $image['title']; 
-							endif;
+//							print_r($image);
+							$imageid = $image['id']; 
 							?>
 
 					<div id="slide<?php echo $i; ?>" class="slide imageslide">
@@ -87,7 +84,7 @@
 						<?php $i++; if ($i === $numItems ) $i = 0; ?>
 
 						<figure>
-							<a href="#slide<?php echo $i; ?>"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $alt; ?>" /></a>
+							<a href="#slide<?php echo $i; ?>"><?php spellerberg_the_image($imageid); ?></a>
 							<figcaption><?php if ( get_sub_field('caption') ) the_sub_field('caption'); ?></figcaption>
 						</figure>
 

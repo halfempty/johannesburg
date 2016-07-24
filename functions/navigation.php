@@ -37,12 +37,16 @@ function recursive_output($menuitemid, $ancestors, $currentpageid) {
 		$itemname = get_the_title($menuitemid);
 	endif; 
 
+
+	$post = get_post($menuitemid);
+	$slug = $post->post_name;
+
 	$itemurl = get_permalink($menuitemid);
 
 	if ( $menuitemid == $currentpageid ) :
-		$output .= '<li class="hidenav">';
+		$output .= '<li class="hidenav ' .  $slug . '">';
 	else:
-		$output .= '<li>';
+		$output .= '<li class="' .  $slug . '">';
 	endif; 
 
 	$output .= '<a href="' . $itemurl . '">' . $itemname .'</a>';
